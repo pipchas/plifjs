@@ -1,0 +1,101 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with fp 47 and seed 414937803826937596 with 8 workers on 8 cores with 1198MB heap and 2693MB offheap memory [pid: 5524] (Windows 10 10.0 amd64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file C:\Users\midm0422\Desktop\specs_for_tifl\specs_011023\specs\Main.toolbox\Model_1\MC.tla
+Parsing file C:\Users\midm0422\Desktop\specs_for_tifl\specs_011023\specs\Main.toolbox\Model_1\Main.tla
+Parsing file C:\Users\midm0422\Desktop\toolbox\plugins\org.lamport.tlatools_1.0.0.202012311918\tla2sany\StandardModules\TLC.tla
+Parsing file C:\Users\midm0422\Desktop\specs_for_tifl\specs_011023\specs\Main.toolbox\Model_1\RuntimeFS.tla
+Parsing file C:\Users\midm0422\Desktop\toolbox\plugins\org.lamport.tlatools_1.0.0.202012311918\tla2sany\StandardModules\Sequences.tla
+Parsing file C:\Users\midm0422\Desktop\specs_for_tifl\specs_011023\specs\Main.toolbox\Model_1\ParametersFS.tla
+Parsing file C:\Users\midm0422\Desktop\toolbox\plugins\org.lamport.tlatools_1.0.0.202012311918\tla2sany\StandardModules\Naturals.tla
+Parsing file C:\Users\midm0422\Desktop\specs_for_tifl\specs_011023\specs\Main.toolbox\Model_1\Paralocks.tla
+Parsing file C:\Users\midm0422\Desktop\toolbox\plugins\org.lamport.tlatools_1.0.0.202012311918\tla2sany\StandardModules\FiniteSets.tla
+Parsing file C:\Users\midm0422\Desktop\specs_for_tifl\specs_011023\specs\Main.toolbox\Model_1\Apalache.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Apalache
+Semantic processing of module Paralocks
+Semantic processing of module ParametersFS
+Semantic processing of module RuntimeFS
+Semantic processing of module Main
+Semantic processing of module MC
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2024-10-14 15:23:30)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2269:0 @!@!@
+Computed 2 initial states...
+@!@!@ENDMSG 2269 @!@!@
+@!@!@STARTMSG 2269:0 @!@!@
+Computed 4 initial states...
+@!@!@ENDMSG 2269 @!@!@
+@!@!@STARTMSG 2269:0 @!@!@
+Computed 8 initial states...
+@!@!@ENDMSG 2269 @!@!@
+@!@!@STARTMSG 2269:0 @!@!@
+Computed 16 initial states...
+@!@!@ENDMSG 2269 @!@!@
+@!@!@STARTMSG 2269:0 @!@!@
+Computed 32 initial states...
+@!@!@ENDMSG 2269 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 49 distinct states generated at 2024-10-14 15:23:31.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2110:1 @!@!@
+Invariant ParalocksInv is violated.
+@!@!@ENDMSG 2110 @!@!@
+@!@!@STARTMSG 2121:1 @!@!@
+The behavior up to this point is:
+@!@!@ENDMSG 2121 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+1: <Initial predicate>
+/\ Sessions = (alex :> [SessionM |-> <<>>, PCLabel |-> <<{<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}>>, Ret |-> <<>>, StateRegs |-> <<[fp |-> 1, pc |-> <<"f_get_paper", "lbl_2">>]>>] @@ bob :> [SessionM |-> <<>>, PCLabel |-> <<{<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}>>, Ret |-> <<>>, StateRegs |-> <<[fp |-> 1, pc |-> <<"p_change_status", "lbl_2">>]>>])
+/\ XLocks = Undef
+/\ VPol = [conferences_name |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "conferences_name"], sections_section_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "sections_section_id"], submissions_conference_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "submissions_conference_id"], conferences_start_date |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "conferences_start_date"], papers_paper_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "papers_paper_id"], submissions_status |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "submissions_status"], conferences_description |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "conferences_description"], submissions_submission_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "submissions_submission_id"], papers_abstract |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "papers_abstract"], allocations_allocation_date |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "allocations_allocation_date"], submissions_paper_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "submissions_paper_id"], allocations_submission_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "allocations_submission_id"], sections_title |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "sections_title"], allocations_paper_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "allocations_paper_id"], papers_text |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "papers_text"], allocations_section_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "allocations_section_id"], logs_err_info |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "logs_err_info"], submissions_submission_date |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "submissions_submission_date"], papers_title |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "papers_title"], sections_conference_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "sections_conference_id"], papers_authors |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "papers_authors"], sections_start_date |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "sections_start_date"], sections_place |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "sections_place"], sections_end_date |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "sections_end_date"], logs_event_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "logs_event_id"], allocations_allocation_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "allocations_allocation_id"], conferences_conference_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "conferences_conference_id"], conferences_end_date |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "conferences_end_date"]]
+/\ SLocks = (alex :> [t_expire |-> {}, guest |-> {}, reviewer |-> {}, manager |-> {}, organizer |-> {}] @@ bob :> [t_expire |-> {}, guest |-> {bob}, reviewer |-> {bob}, manager |-> {}, organizer |-> {}])
+/\ Ignore = 0
+/\ Trace = <<>>
+/\ New2Old = <<<<{}>>, <<{<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}>>>>
+/\ StateE = [t_expire |-> {}, guest |-> {}, reviewer |-> {}, manager |-> {}, organizer |-> {}]
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+2: <Next line 911, col 13 to line 914, col 54 of module Main>
+/\ Sessions = (alex :> [SessionM |-> <<>>, PCLabel |-> <<{<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}>>, Ret |-> <<>>, StateRegs |-> <<[fp |-> 1, pc |-> <<"f_get_paper", "lbl_2">>]>>] @@ bob :> [SessionM |-> <<{<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, {<<x, <<[t_expire |-> {}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>, <<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {x}, organizer |-> {NONE}]>>>>}>>, PCLabel |-> <<{<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}>>, Ret |-> <<>>, StateRegs |-> <<[fp |-> 1, pc |-> <<"p_change_status", "lbl_2">>]>>])
+/\ XLocks = bob
+/\ VPol = [conferences_name |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "conferences_name"], sections_section_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "sections_section_id"], submissions_conference_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "submissions_conference_id"], conferences_start_date |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "conferences_start_date"], papers_paper_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "papers_paper_id"], submissions_status |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "submissions_status"], conferences_description |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "conferences_description"], submissions_submission_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "submissions_submission_id"], papers_abstract |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "papers_abstract"], allocations_allocation_date |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "allocations_allocation_date"], submissions_paper_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "submissions_paper_id"], allocations_submission_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "allocations_submission_id"], sections_title |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "sections_title"], allocations_paper_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "allocations_paper_id"], papers_text |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "papers_text"], allocations_section_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "allocations_section_id"], logs_err_info |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "logs_err_info"], submissions_submission_date |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "submissions_submission_date"], papers_title |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "papers_title"], sections_conference_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "sections_conference_id"], papers_authors |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "papers_authors"], sections_start_date |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "sections_start_date"], sections_place |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "sections_place"], sections_end_date |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "sections_end_date"], logs_event_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "logs_event_id"], allocations_allocation_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "allocations_allocation_id"], conferences_conference_id |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "conferences_conference_id"], conferences_end_date |-> [policy |-> {<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, ext |-> 0, name |-> "conferences_end_date"]]
+/\ SLocks = (alex :> [t_expire |-> {}, guest |-> {}, reviewer |-> {}, manager |-> {}, organizer |-> {}] @@ bob :> [t_expire |-> {}, guest |-> {bob}, reviewer |-> {bob}, manager |-> {}, organizer |-> {}])
+/\ Ignore = 0
+/\ Trace = <<<<bob, "p_change_status_load">>>>
+/\ New2Old = <<<<{<<bob, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {bob}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, {<<bob, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {bob}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}>>, <<{<<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>}, {<<x, <<[t_expire |-> {}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {NONE}, organizer |-> {NONE}]>>>>, <<x, <<[t_expire |-> {NONE}], [guest |-> {NONE}, reviewer |-> {NONE}, manager |-> {x}, organizer |-> {NONE}]>>>>}>>>>
+/\ StateE = [t_expire |-> {}, guest |-> {bob}, reviewer |-> {bob}, manager |-> {}, organizer |-> {}]
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(2) at 2024-10-14 15:23:32: 122 states generated (2 948 s/min), 122 distinct states found (2 948 ds/min), 76 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2199:0 @!@!@
+122 states generated, 122 distinct states found, 76 states left on queue.
+@!@!@ENDMSG 2199 @!@!@
+@!@!@STARTMSG 2194:0 @!@!@
+The depth of the complete state graph search is 2.
+@!@!@ENDMSG 2194 @!@!@
+@!@!@STARTMSG 2268:0 @!@!@
+The average outdegree of the complete state graph is 2 (minimum is 2, the maximum 2 and the 95th percentile is 2).
+@!@!@ENDMSG 2268 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 2495ms at (2024-10-14 15:23:32)
+@!@!@ENDMSG 2186 @!@!@
