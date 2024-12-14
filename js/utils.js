@@ -86,6 +86,7 @@ function prettyPrint(stateStr){
 function parseVars(stateStr){
   let vars = new Map();
   let lines = removeEscapes(stateStr).split("\\n");
+  console.log(lines, 'LLPAFPLFPASLPFLASPFLPASLPFASLFLSAPLf')
   let currVar = null;
   let currVal = "";
   for(line of lines){
@@ -94,8 +95,10 @@ function parseVars(stateStr){
       let equalIndex = line.indexOf("=");
       currVar = line.substr(3,equalIndex-4);
       currVal = line.substr(equalIndex+2);
+      console.log(currVar, line, 'CURVARNAME')
     } else currVal += line;
   }
+  console.log(currVar, 'CURVAL GO TO PARSER')
   if(currVar != null) vars.set(currVar, parser.parse(currVal));
   return vars;
 }

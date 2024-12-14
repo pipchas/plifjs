@@ -626,7 +626,7 @@ class GraphClass{
     return res;
   }
 }
-
+let resultTrace = []
 // Return the identifier label to use in the next state buttons
 function stateIdentifier(child_i, stateStr){
   return "Child " + child_i;
@@ -647,13 +647,20 @@ function drawState(content, stateStr){
 function drawTrace(content, stateStr){
   console.log(stateStr, content, 'qwerty')
   let str = new String(stateStr);
+  console.log(str, 'STSTRSTST')
   let vars = parseVars(str);
   let template = document.getElementById("traceTemplate");
   let result = template.content.cloneNode(true);
-  console.log(vars, 'OTSUDA')
+  console.log(vars.get("Trace"), 'OTSUDA') 
+  //вернуть для отладки
+  // if(vars.get("Trace").length) {
+  //   vars.set("Trace", [vars.get("Trace")])
+  // }
+  console.log(vars.get("Trace"), 'SOSAT AMERIKA')
+  //тут трассы одинаковые просто ниже переболр значсений оч странно работает надо подебажить
   traceTab = result.querySelector("#traceTabBody");
   let row_template = document.getElementById("traceRowTemplate");
-
+//в рабочем варианте сверху еще раз обернуто в массив поэтому все работает
   for(x of vars.get("Trace")){
 
     let row = row_template.content.cloneNode(true);
@@ -662,9 +669,10 @@ function drawTrace(content, stateStr){
     let c2 = row.querySelector("#c2");
     let c3 = row.querySelector("#c3");
     console.log(x, 'NE RABOTAETE')
-    c1.innerHTML = x[0].replaceAll("\"", "");;
-    c2.innerHTML = x[1].replaceAll("\"", "");
-    c3.innerHTML = x[2].replaceAll("\"", "");
+    //по сути это не важно но проблемки имеются надо подумать как
+    // c1.innerHTML = x[0].replaceAll("\"", "");
+    // c2.innerHTML = x[1].replaceAll("\"", "");
+    // c3.innerHTML = x[2].replaceAll("\"", "");
 
     traceTab.appendChild(row);
   }
@@ -963,11 +971,15 @@ var edges = undefined;
 var AllSessions = [];
 
 function ParsePCLabelTrace(trace, n){
+  //тут кину в  еще один массив
+  //тут приходит уже слепленная штука с многими массивами
+  const newTrace = [];
   console.log("trace PC")
   console.log(trace)
   if(trace.length == 0)
     return undefined
-  let PClabelFrom = trace[n][3]["from"]
+  console.log(n, trace[n][2]["from"], 'FOROOROFOROR')
+  let PClabelFrom = trace[n][2]["from"]
   if(PClabelFrom.length == 0)
     return undefined
   else
@@ -996,35 +1008,43 @@ function drawGraph(content, stateStr, next_state){
   //next_state -по сути каррент stateStr - по сути прошлый
   let str = new String(stateStr);
   let next_str = new String(next_state)
+  console.log(str, 'Before trace')
   let vars = parseVars(str);
-  console.log(next_str, "CUCUCUCUCU")
   let next_vars = parseVars(next_str);
-  let next_trace = next_vars.get("Trace")
-  let trace = vars.get("Trace");
+  let next_trace1 = next_vars.get("Trace")
+  
+  let trace1 = vars.get("Trace");
   let session = vars.get("Sessions");
   let VPol = vars.get("VPol");
-  console.log(next_vars, 'STRTRTRTRT')
-  // console.log(vars);
-  // console.log(trace);
-  //console.log()
-  // console.log(next_vars)
+  
   //let PClabelpol = ParsePCLabelTrace(next_trace)
-console.log(typeof(null))
+  //изменения для новой проги
+  let trace = []
+  let next_trace = []
+  if(trace1.length > 0) {
+    trace = [trace1]
+    next_trace = [trace1,next_trace1]
+  }
+  // console.log(trace, 'STRTRTRTRT')
+  // console.log(next_trace, 'VARVAVRVAVRVARV');
+  //нужно складывать и  слепливать все. необходимо сделать версию проекта полностью с рабочим старым кодом. не забыть что переменных в массиве меньше на одну
   if(trace.length > AllSessions.length)
     AllSessions.push(session)
   console.log(AllSessions)
-
+  
   //let sessionM = vars.get("SessionM");
   //тут происходит основные преобразование мапы и потом все вкидывается в библиотеку для отрисовки
   graphInst =  new GraphClass();
   let PClabelpol = undefined
+  console.log(trace, 'TRACE 213421')
   if(trace.length > 0){
     let n_state = 1;
     for(const t of trace){
+      console.log(next_trace, n_state, 'VXODPCLABEL')
       if(n_state <next_trace.length)
         PClabelpol = ParsePCLabelTrace(next_trace, n_state)
       n_state += 1
-      graphInst.processLayer(t[0], t[3], AllSessions, VPol, PClabelpol);
+      graphInst.processLayer(t[0], t[2], AllSessions, VPol, PClabelpol);
     }
   }
   console.log(PClabelpol, 'PCPCPCPPC')
