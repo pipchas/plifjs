@@ -653,9 +653,9 @@ function drawTrace(content, stateStr){
   let result = template.content.cloneNode(true);
   console.log(vars.get("Trace"), 'OTSUDA') 
   //вернуть для отладки
-  // if(vars.get("Trace").length) {
-  //   vars.set("Trace", [vars.get("Trace")])
-  // }
+  if(vars.get("Trace").length) {
+    vars.set("Trace", [vars.get("Trace")])
+  }
   console.log(vars.get("Trace"), 'SOSAT AMERIKA')
   //тут трассы одинаковые просто ниже переболр значсений оч странно работает надо подебажить
   traceTab = result.querySelector("#traceTabBody");
@@ -670,8 +670,8 @@ function drawTrace(content, stateStr){
     let c3 = row.querySelector("#c3");
     console.log(x, 'NE RABOTAETE')
     //по сути это не важно но проблемки имеются надо подумать как
-    // c1.innerHTML = x[0].replaceAll("\"", "");
-    // c2.innerHTML = x[1].replaceAll("\"", "");
+    c1.innerHTML = x[0].replaceAll("\"", "");
+    c2.innerHTML = x[1].replaceAll("\"", "");
     // c3.innerHTML = x[2].replaceAll("\"", "");
 
     traceTab.appendChild(row);
@@ -1022,8 +1022,16 @@ function drawGraph(content, stateStr, next_state){
   let trace = []
   let next_trace = []
   if(trace1.length > 0) {
-    trace = [trace1]
+    //trace тоже надо увеличивать а то берется ток одна и получается неправильно
+    
     next_trace = [trace1,next_trace1]
+    if(!resultTrace.length) {
+      trace = [trace1]
+      resultTrace.push(...next_trace)
+    } else {
+      trace = resultTrace
+      resultTrace.push(next_trace1)
+    }
   }
   // console.log(trace, 'STRTRTRTRT')
   // console.log(next_trace, 'VARVAVRVAVRVARV');
@@ -1040,14 +1048,14 @@ function drawGraph(content, stateStr, next_state){
   if(trace.length > 0){
     let n_state = 1;
     for(const t of trace){
-      console.log(next_trace, n_state, 'VXODPCLABEL')
-      if(n_state <next_trace.length)
-        PClabelpol = ParsePCLabelTrace(next_trace, n_state)
+      console.log(resultTrace, n_state, 'VXODPCLABEL')
+      if(n_state < resultTrace.length)
+        PClabelpol = ParsePCLabelTrace(resultTrace, n_state)
       n_state += 1
       graphInst.processLayer(t[0], t[2], AllSessions, VPol, PClabelpol);
     }
   }
-  console.log(PClabelpol, 'PCPCPCPPC')
+  console.log(PClabelpol, graphInst, 'PCPCPCPPC')
   nodes = new vis.DataSet(graphInst.Nodes);  
   edges = new vis.DataSet(graphInst.Edges); 
 

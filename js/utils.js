@@ -95,7 +95,7 @@ function parseVars(stateStr){
       let equalIndex = line.indexOf("=");
       currVar = line.substr(3,equalIndex-4);
       currVal = line.substr(equalIndex+2);
-      console.log(currVar, line, 'CURVARNAME')
+      // console.log(currVar, line, 'CURVARNAME')
     } else currVal += line;
   }
   console.log(currVar, 'CURVAL GO TO PARSER')
